@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día Mamá</title>
+    <style>
+        body {
+            background-color: #f7e6e6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #d83a56;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .heart {
+            font-size: 60px;
+            color: red;
+            animation: beat 1s infinite;
+        }
+
+        .message {
+            font-size: 30px;
+            color: #333;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .signature {
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #d83a56;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .heart-animation {
+            animation: floatHearts 3s linear infinite;
+        }
+
+        @keyframes floatHearts {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Feliz Día Mamá!</h1>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="message">Te amo mucho, mamá</div>
+    <div class="signature">De parte de ignacio para Marilu</div>
+
+    <script>
+        // Generar corazones flotantes
+        setInterval(function() {
+            let heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.position = 'absolute';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.animation = 'floatHearts 3s linear infinite';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3000);
+        }, 500);
+    </script>
+</body>
+</html>
